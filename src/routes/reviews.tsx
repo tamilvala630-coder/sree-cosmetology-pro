@@ -1,0 +1,5 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { EmptyVerified, PageHero } from "@/components/ClinicLayout";
+import clinicImage from "@/assets/clinic-consultation.jpg";
+export const Route=createFileRoute("/reviews")({head:()=>({meta:[{title:"Patient Reviews | Sree Cosmetology Rajahmundry"},{name:"description",content:"Read verified patient feedback for Sree Cosmetology Hair & Skin Clinic when approved reviews are available."},{property:"og:title",content:"Patient Reviews | Sree Cosmetology"},{property:"og:description",content:"Authentic patient experiences, published only after verification."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/reviews"}]}),component:Page});
+function Page(){return <><PageHero eyebrow="Patient reviews" title="What Our Patients Say" text="Authentic feedback helps visitors understand the care experience. We publish only verified reviews." image={clinicImage} alt="A professional hair consultation"/><section className="py-24"><div className="section-shell"><EmptyVerified type="reviews"/></div></section></>}
