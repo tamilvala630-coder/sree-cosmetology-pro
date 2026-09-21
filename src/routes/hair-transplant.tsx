@@ -1,0 +1,5 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ContentPage } from "@/components/ContentPage";
+import { hairTreatments } from "@/lib/clinic";
+export const Route=createFileRoute("/hair-transplant")({head:()=>({meta:[{title:"Hair Transplant in Rajahmundry | Sree Cosmetology"},{name:"description",content:"Explore consultation-led FUE, hairline, crown, beard and corrective hair transplant planning in Rajahmundry."},{property:"og:title",content:"Hair Transplant Rajahmundry | Sree Cosmetology"},{property:"og:description",content:"Hair restoration planned around donor area, hair loss pattern and long-term expectations."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/hair-transplant"}]}),component:Page});
+function Page(){return <ContentPage eyebrow="Hair restoration" title="Hair Transplantation Planned Around Your Hair" intro="A well-considered plan starts with donor assessment, hair loss pattern, hairline design and realistic expectations—not a one-size-fits-all graft number." items={hairTreatments}/>}

@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BeforeAfterRouteImport } from './routes/before-after'
+import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as HairRouteImport } from './routes/hair'
+import { Route as HairTransplantRouteImport } from './routes/hair-transplant'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as SkinRouteImport } from './routes/skin'
+import { Route as TreatmentsRouteImport } from './routes/treatments'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BeforeAfterRoute = BeforeAfterRouteImport.update({
+  id: '/before-after',
+  path: '/before-after',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HairRoute = HairRouteImport.update({
+  id: '/hair',
+  path: '/hair',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HairTransplantRoute = HairTransplantRouteImport.update({
+  id: '/hair-transplant',
+  path: '/hair-transplant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkinRoute = SkinRouteImport.update({
+  id: '/skin',
+  path: '/skin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreatmentsRoute = TreatmentsRouteImport.update({
+  id: '/treatments',
+  path: '/treatments',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/before-after': typeof BeforeAfterRoute
+  '/faqs': typeof FaqsRoute
+  '/hair': typeof HairRoute
+  '/hair-transplant': typeof HairTransplantRoute
+  '/reviews': typeof ReviewsRoute
+  '/skin': typeof SkinRoute
+  '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/before-after': typeof BeforeAfterRoute
+  '/faqs': typeof FaqsRoute
+  '/hair': typeof HairRoute
+  '/hair-transplant': typeof HairTransplantRoute
+  '/reviews': typeof ReviewsRoute
+  '/skin': typeof SkinRoute
+  '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/before-after': typeof BeforeAfterRoute
+  '/faqs': typeof FaqsRoute
+  '/hair': typeof HairRoute
+  '/hair-transplant': typeof HairTransplantRoute
+  '/reviews': typeof ReviewsRoute
+  '/skin': typeof SkinRoute
+  '/treatments': typeof TreatmentsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/before-after'
+    | '/faqs'
+    | '/hair'
+    | '/hair-transplant'
+    | '/reviews'
+    | '/skin'
+    | '/treatments'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/before-after'
+    | '/faqs'
+    | '/hair'
+    | '/hair-transplant'
+    | '/reviews'
+    | '/skin'
+    | '/treatments'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/before-after'
+    | '/faqs'
+    | '/hair'
+    | '/hair-transplant'
+    | '/reviews'
+    | '/skin'
+    | '/treatments'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BeforeAfterRoute: typeof BeforeAfterRoute
+  FaqsRoute: typeof FaqsRoute
+  HairRoute: typeof HairRoute
+  HairTransplantRoute: typeof HairTransplantRoute
+  ReviewsRoute: typeof ReviewsRoute
+  SkinRoute: typeof SkinRoute
+  TreatmentsRoute: typeof TreatmentsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/before-after': {
+      id: '/before-after'
+      path: '/before-after'
+      fullPath: '/before-after'
+      preLoaderRoute: typeof BeforeAfterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hair': {
+      id: '/hair'
+      path: '/hair'
+      fullPath: '/hair'
+      preLoaderRoute: typeof HairRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hair-transplant': {
+      id: '/hair-transplant'
+      path: '/hair-transplant'
+      fullPath: '/hair-transplant'
+      preLoaderRoute: typeof HairTransplantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skin': {
+      id: '/skin'
+      path: '/skin'
+      fullPath: '/skin'
+      preLoaderRoute: typeof SkinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treatments': {
+      id: '/treatments'
+      path: '/treatments'
+      fullPath: '/treatments'
+      preLoaderRoute: typeof TreatmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BeforeAfterRoute: BeforeAfterRoute,
+  FaqsRoute: FaqsRoute,
+  HairRoute: HairRoute,
+  HairTransplantRoute: HairTransplantRoute,
+  ReviewsRoute: ReviewsRoute,
+  SkinRoute: SkinRoute,
+  TreatmentsRoute: TreatmentsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
