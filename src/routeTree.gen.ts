@@ -12,11 +12,15 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BeforeAfterRouteImport } from './routes/before-after'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as HairRouteImport } from './routes/hair'
 import { Route as HairTransplantRouteImport } from './routes/hair-transplant'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as SkinRouteImport } from './routes/skin'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
 
 const IndexRoute = IndexRouteImport.update({
@@ -34,6 +38,16 @@ const BeforeAfterRoute = BeforeAfterRouteImport.update({
   path: '/before-after',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
@@ -49,6 +63,11 @@ const HairTransplantRoute = HairTransplantRouteImport.update({
   path: '/hair-transplant',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
@@ -57,6 +76,11 @@ const ReviewsRoute = ReviewsRouteImport.update({
 const SkinRoute = SkinRouteImport.update({
   id: '/skin',
   path: '/skin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreatmentsRoute = TreatmentsRouteImport.update({
@@ -69,22 +93,30 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/before-after': typeof BeforeAfterRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
   '/hair': typeof HairRoute
   '/hair-transplant': typeof HairTransplantRoute
+  '/privacy': typeof PrivacyRoute
   '/reviews': typeof ReviewsRoute
   '/skin': typeof SkinRoute
+  '/terms': typeof TermsRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/before-after': typeof BeforeAfterRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
   '/hair': typeof HairRoute
   '/hair-transplant': typeof HairTransplantRoute
+  '/privacy': typeof PrivacyRoute
   '/reviews': typeof ReviewsRoute
   '/skin': typeof SkinRoute
+  '/terms': typeof TermsRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesById {
@@ -92,11 +124,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/before-after': typeof BeforeAfterRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
   '/hair': typeof HairRoute
   '/hair-transplant': typeof HairTransplantRoute
+  '/privacy': typeof PrivacyRoute
   '/reviews': typeof ReviewsRoute
   '/skin': typeof SkinRoute
+  '/terms': typeof TermsRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRouteTypes {
@@ -105,33 +141,45 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/before-after'
+    | '/contact'
+    | '/disclaimer'
     | '/faqs'
     | '/hair'
     | '/hair-transplant'
+    | '/privacy'
     | '/reviews'
     | '/skin'
+    | '/terms'
     | '/treatments'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/before-after'
+    | '/contact'
+    | '/disclaimer'
     | '/faqs'
     | '/hair'
     | '/hair-transplant'
+    | '/privacy'
     | '/reviews'
     | '/skin'
+    | '/terms'
     | '/treatments'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/before-after'
+    | '/contact'
+    | '/disclaimer'
     | '/faqs'
     | '/hair'
     | '/hair-transplant'
+    | '/privacy'
     | '/reviews'
     | '/skin'
+    | '/terms'
     | '/treatments'
   fileRoutesById: FileRoutesById
 }
@@ -139,11 +187,15 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BeforeAfterRoute: typeof BeforeAfterRoute
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
   FaqsRoute: typeof FaqsRoute
   HairRoute: typeof HairRoute
   HairTransplantRoute: typeof HairTransplantRoute
+  PrivacyRoute: typeof PrivacyRoute
   ReviewsRoute: typeof ReviewsRoute
   SkinRoute: typeof SkinRoute
+  TermsRoute: typeof TermsRoute
   TreatmentsRoute: typeof TreatmentsRoute
 }
 
@@ -170,6 +222,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BeforeAfterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faqs': {
       id: '/faqs'
       path: '/faqs'
@@ -191,6 +257,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HairTransplantRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reviews': {
       id: '/reviews'
       path: '/reviews'
@@ -203,6 +276,13 @@ declare module '@tanstack/react-router' {
       path: '/skin'
       fullPath: '/skin'
       preLoaderRoute: typeof SkinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treatments': {
@@ -219,11 +299,15 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BeforeAfterRoute: BeforeAfterRoute,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
   FaqsRoute: FaqsRoute,
   HairRoute: HairRoute,
   HairTransplantRoute: HairTransplantRoute,
+  PrivacyRoute: PrivacyRoute,
   ReviewsRoute: ReviewsRoute,
   SkinRoute: SkinRoute,
+  TermsRoute: TermsRoute,
   TreatmentsRoute: TreatmentsRoute,
 }
 export const routeTree = rootRouteImport
