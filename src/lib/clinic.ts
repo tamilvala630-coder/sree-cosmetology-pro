@@ -3,10 +3,12 @@ export const clinic = {
   shortName: "Sree Cosmetology",
   location: "Danavaipeta, Rajahmundry",
   address: "DNO-46-15-15/2, Sree Cosmetology Hair & Skin Clinic, Opposite Gandhi Park, Beside Jabilli Hospital, Danavaipeta, Rajahmundry, Andhra Pradesh – 533103",
-  phone: "",
-  whatsapp: "",
-  hours: "Opening hours awaiting verification",
-  googleBusinessUrl: "",
+  phone: "+919493813399",
+  phoneDisplay: "+91 94938 13399",
+  whatsapp: "919493813399",
+  hours: "Open all days, 10:00 am – 7:00 pm",
+  googleBusinessUrl: "https://share.google/KCZDiF97514ZIvTz3",
+  instagramUrl: "https://www.instagram.com/sree_cosmetology_clinic_rjy/",
   whatsappMessage: "Hi, I would like to book a consultation at Sree Cosmetology Hair & Skin Clinic. I would like to know more about your hair and skin treatments.",
   rating: null as null | { score: string; count: number },
   doctors: [] as Array<{ name: string; qualification: string; specialisation: string; experience: string; bio: string; image: string }>,
@@ -50,7 +52,7 @@ export const faqItems = [
 
 export const nav = [
   ["Home", "/"], ["Hair", "/hair"], ["Skin", "/skin"], ["Hair Transplant", "/hair-transplant"],
-  ["Treatments", "/treatments"], ["Before & After", "/before-after"], ["About", "/about"],
+  ["Treatments", "/treatments"], ["Before & After", "/before-after"], ["Gallery", "/gallery"], ["About", "/about"],
   ["Reviews", "/reviews"], ["FAQs", "/faqs"], ["Contact", "/contact"],
 ] as const;
 

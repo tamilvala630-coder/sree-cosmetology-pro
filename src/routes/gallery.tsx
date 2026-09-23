@@ -1,0 +1,64 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
+import { PageHero } from "@/components/ClinicLayout";
+import clinicInterior from "@/assets/clinic-interior.jpg";
+import clinicConsultation from "@/assets/clinic-consultation.jpg";
+import skinConsultation from "@/assets/skin-consultation.jpg";
+
+export const Route = createFileRoute("/gallery")({
+  head: () => ({
+    meta: [
+      { title: "Clinic Gallery | Sree Cosmetology Rajahmundry" },
+      { name: "description", content: "A look inside Sree Cosmetology Hair & Skin Clinic in Danavaipeta, Rajahmundry — consultation spaces, treatment areas and clinic environment." },
+      { property: "og:title", content: "Clinic Gallery | Sree Cosmetology" },
+      { property: "og:description", content: "See the consultation and treatment environment at our Rajahmundry hair and skin clinic." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/gallery" }],
+  }),
+  component: Gallery,
+});
+
+const images = [
+  { src: clinicInterior, alt: "Clinic reception and waiting area", caption: "Reception" },
+  { src: clinicConsultation, alt: "Hair and scalp consultation in progress", caption: "Hair consultation" },
+  { src: skinConsultation, alt: "Skin care plan being discussed with a patient", caption: "Skin consultation" },
+  { src: clinicInterior, alt: "Consultation room at the clinic", caption: "Consultation room" },
+  { src: skinConsultation, alt: "Treatment area of the clinic", caption: "Treatment area" },
+  { src: clinicConsultation, alt: "Patient journey at the clinic", caption: "Patient journey" },
+];
+
+function Gallery() {
+  const [active, setActive] = useState<number | null>(null);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setActive(null); };
+    addEventListener("keydown", onKey);
+    return () => removeEventListener("keydown", onKey);
+  }, []);
+  return (
+    <>
+      <PageHero eyebrow="Clinic gallery" title="A Calm, Clean Place for Your Care" text="These images show the clinic environment. Photographs of the team, patient results and equipment are added only once approved by the clinic." image={clinicInterior} alt="Sree Cosmetology clinic interior in Rajahmundry" />
+      <section className="py-24">
+        <div className="section-shell">
+          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
+            {images.map((image, i) => (
+              <button key={i} type="button" onClick={() => setActive(i)} className="group block w-full overflow-hidden rounded-lg border border-border text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+                <img src={image.src} alt={image.alt} loading="lazy" className={`w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${i % 3 === 1 ? "aspect-[3/4]" : "aspect-[4/3]"}`} />
+                <span className="block bg-background px-4 py-3 text-xs font-semibold uppercase tracking-[.16em] text-muted-foreground">{image.caption}</span>
+              </button>
+            ))}
+          </div>
+          <p className="mt-8 text-xs text-muted-foreground">Images are illustrative of the clinic environment and are replaced as clinic photographs are supplied.</p>
+        </div>
+      </section>
+      {active !== null && (
+        <div role="dialog" aria-modal="true" aria-label={images[active].caption} className="fixed inset-0 z-[60] grid place-items-center bg-ink/90 p-6" onClick={() => setActive(null)}>
+          <button type="button" aria-label="Close image" className="absolute right-6 top-6 rounded-full bg-background/15 p-2 text-primary-foreground" onClick={() => setActive(null)}><X /></button>
+          <img src={images[active].src} alt={images[active].alt} className="max-h-[80vh] w-auto max-w-full rounded-lg" onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
+    </>
+  );
+}
