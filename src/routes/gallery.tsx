@@ -32,6 +32,7 @@ const images = [
 
 function Gallery() {
   const [active, setActive] = useState<number | null>(null);
+  const current = active === null ? null : images[active] ?? null;
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setActive(null); };
     addEventListener("keydown", onKey);
