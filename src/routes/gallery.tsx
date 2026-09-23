@@ -54,10 +54,10 @@ function Gallery() {
           <p className="mt-8 text-xs text-muted-foreground">Images are illustrative of the clinic environment and are replaced as clinic photographs are supplied.</p>
         </div>
       </section>
-      {active !== null && (
-        <div role="dialog" aria-modal="true" aria-label={images[active].caption} className="fixed inset-0 z-[60] grid place-items-center bg-ink/90 p-6" onClick={() => setActive(null)}>
+      {current && (
+        <div role="dialog" aria-modal="true" aria-label={current.caption} className="fixed inset-0 z-[60] grid place-items-center bg-ink/90 p-6" onClick={() => setActive(null)}>
           <button type="button" aria-label="Close image" className="absolute right-6 top-6 rounded-full bg-background/15 p-2 text-primary-foreground" onClick={() => setActive(null)}><X /></button>
-          <img src={images[active].src} alt={images[active].alt} className="max-h-[80vh] w-auto max-w-full rounded-lg" onClick={(e) => e.stopPropagation()} />
+          <img src={current.src} alt={current.alt} className="max-h-[80vh] w-auto max-w-full rounded-lg" onClick={(e) => e.stopPropagation()} />
         </div>
       )}
     </>
