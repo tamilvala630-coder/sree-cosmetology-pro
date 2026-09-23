@@ -15,6 +15,7 @@ import { Route as BeforeAfterRouteImport } from './routes/before-after'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as HairRouteImport } from './routes/hair'
 import { Route as HairTransplantRouteImport } from './routes/hair-transplant'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -51,6 +52,11 @@ const DisclaimerRoute = DisclaimerRouteImport.update({
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HairRoute = HairRouteImport.update({
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/hair': typeof HairRoute
   '/hair-transplant': typeof HairTransplantRoute
   '/privacy': typeof PrivacyRoute
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/hair': typeof HairRoute
   '/hair-transplant': typeof HairTransplantRoute
   '/privacy': typeof PrivacyRoute
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/hair': typeof HairRoute
   '/hair-transplant': typeof HairTransplantRoute
   '/privacy': typeof PrivacyRoute
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/faqs'
+    | '/gallery'
     | '/hair'
     | '/hair-transplant'
     | '/privacy'
@@ -159,6 +169,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/faqs'
+    | '/gallery'
     | '/hair'
     | '/hair-transplant'
     | '/privacy'
@@ -174,6 +185,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/faqs'
+    | '/gallery'
     | '/hair'
     | '/hair-transplant'
     | '/privacy'
@@ -190,6 +202,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FaqsRoute: typeof FaqsRoute
+  GalleryRoute: typeof GalleryRoute
   HairRoute: typeof HairRoute
   HairTransplantRoute: typeof HairTransplantRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -241,6 +254,13 @@ declare module '@tanstack/react-router' {
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hair': {
@@ -302,6 +322,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   FaqsRoute: FaqsRoute,
+  GalleryRoute: GalleryRoute,
   HairRoute: HairRoute,
   HairTransplantRoute: HairTransplantRoute,
   PrivacyRoute: PrivacyRoute,
