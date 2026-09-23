@@ -17,7 +17,7 @@ export function Header() {
 
 export function Footer() {
   const groups = [
-    ["Clinic", [["About","/about"],["Reviews","/reviews"],["Gallery","/about"],["Contact","/contact"]]],
+    ["Clinic", [["About","/about"],["Reviews","/reviews"],["Gallery","/gallery"],["Contact","/contact"]]],
     ["Hair", [["Hair Loss","/hair"],["Hair Transplant","/hair-transplant"],["FUE","/hair-transplant"],["PRP & GFC","/treatments"]]],
     ["Skin", [["Acne","/skin"],["Acne Scars","/skin"],["Pigmentation","/skin"],["Skin Treatments","/skin"]]],
   ] as const;
