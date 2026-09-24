@@ -7,7 +7,6 @@ import { EmptyVerified, SectionHeading, TreatmentGrid } from "@/components/Clini
 import { DoctorProfile, ResultsGrid } from "@/components/ClinicMedia";
 import { clinic, faqItems, hairTreatments, skinTreatments, whatsappUrl } from "@/lib/clinic";
 import heroImage from "@/assets/clinic-consultation.jpg";
-import clinicImage from "@/assets/clinic-interior.jpg";
 import skinImage from "@/assets/skin-consultation.jpg";
 
 export const Route = createFileRoute("/")({

@@ -20,6 +20,7 @@ export const Route = createFileRoute("/gallery")({
 });
 
 const images = clinicGallery;
+const galleryHero = clinicGallery[3]?.src ?? clinicGallery[0]?.src ?? "";
 
 function Gallery() {
   const [active, setActive] = useState<number | null>(null);
@@ -31,7 +32,7 @@ function Gallery() {
   }, []);
   return (
     <>
-      <PageHero eyebrow="Clinic gallery" title="A Look Inside Sree Cosmetology" text="Explore the clinic branding, services area, reception and waiting environment in Danavaipeta, Rajahmundry." image={images[3].src} alt="Sree Cosmetology clinic reception in Rajahmundry" />
+      <PageHero eyebrow="Clinic gallery" title="A Look Inside Sree Cosmetology" text="Explore the clinic branding, services area, reception and waiting environment in Danavaipeta, Rajahmundry." image={galleryHero} alt="Sree Cosmetology clinic reception in Rajahmundry" />
       <section className="py-24">
         <div className="section-shell">
           <div className="columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
