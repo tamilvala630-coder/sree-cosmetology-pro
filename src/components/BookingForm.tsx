@@ -109,7 +109,7 @@ export function BookingForm() {
 
   if (state === "success")
     return (
-      <div className="grid min-h-80 place-items-center rounded-lg bg-teal-soft/45 p-8 text-center">
+      <div className="grid min-h-80 place-items-center rounded-lg bg-soft-blue p-8 text-center">
         <div>
           <CheckCircle2 className="mx-auto size-10 text-primary" />
           <h3 className="mt-4 text-2xl font-semibold text-ink">Thank you.</h3>
