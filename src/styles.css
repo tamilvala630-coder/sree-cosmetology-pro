@@ -20,7 +20,7 @@
 
 @theme inline {
   --font-sans: "Manrope", sans-serif;
-  --font-display: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,51 +62,51 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-ink: var(--ink);
-  --color-ivory: var(--ivory);
-  --color-teal-soft: var(--teal-soft);
-  --color-gold: var(--gold);
-  --shadow-soft: 0 18px 60px color-mix(in oklab, var(--ink) 9%, transparent);
-  --shadow-lift: 0 22px 70px color-mix(in oklab, var(--primary) 18%, transparent);
+  --color-surface: var(--surface);
+  --color-soft-blue: var(--soft-blue);
+  --color-royal: var(--royal);
+  --shadow-soft: 0 14px 40px color-mix(in oklab, var(--primary) 8%, transparent);
+  --shadow-lift: 0 20px 54px color-mix(in oklab, var(--primary) 15%, transparent);
 }
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.985 0.008 95);
-  --foreground: oklch(0.23 0.025 230);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.2426 0.0404 259.3);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.2426 0.0404 259.3);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.42 0.08 190);
-  --primary-foreground: oklch(0.99 0.005 95);
-  --secondary: oklch(0.94 0.025 170);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.955 0.012 95);
-  --muted-foreground: oklch(0.5 0.025 230);
-  --accent: oklch(0.78 0.09 80);
-  --accent-foreground: oklch(0.23 0.025 230);
+  --popover-foreground: oklch(0.2426 0.0404 259.3);
+  --primary: oklch(0.2948 0.0953 259.53);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.958 0.0159 253.9);
+  --secondary-foreground: oklch(0.2948 0.0953 259.53);
+  --muted: oklch(0.981 0.0062 255.47);
+  --muted-foreground: oklch(0.5544 0.0407 257.42);
+  --accent: oklch(0.958 0.0159 253.9);
+  --accent-foreground: oklch(0.2948 0.0953 259.53);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.88 0.015 190);
-  --input: oklch(0.9 0.015 190);
-  --ring: oklch(0.52 0.08 190);
-  --ink: oklch(0.2 0.026 230);
-  --ivory: oklch(0.97 0.018 92);
-  --teal-soft: oklch(0.9 0.04 180);
-  --gold: oklch(0.7 0.1 80);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.9183 0.0178 253.34);
+  --input: oklch(0.9183 0.0178 253.34);
+  --ring: oklch(0.3848 0.1289 261.05);
+  --ink: oklch(0.2258 0.066 258.05);
+  --surface: oklch(0.981 0.0062 255.47);
+  --soft-blue: oklch(0.958 0.0159 253.9);
+  --royal: oklch(0.3848 0.1289 261.05);
+  --chart-1: oklch(0.2948 0.0953 259.53);
+  --chart-2: oklch(0.3848 0.1289 261.05);
+  --chart-3: oklch(0.5544 0.0407 257.42);
+  --chart-4: oklch(0.958 0.0159 253.9);
+  --chart-5: oklch(0.9183 0.0178 253.34);
+  --sidebar: oklch(0.981 0.0062 255.47);
+  --sidebar-foreground: oklch(0.2426 0.0404 259.3);
+  --sidebar-primary: oklch(0.2948 0.0953 259.53);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.958 0.0159 253.9);
+  --sidebar-accent-foreground: oklch(0.2948 0.0953 259.53);
+  --sidebar-border: oklch(0.9183 0.0178 253.34);
+  --sidebar-ring: oklch(0.3848 0.1289 261.05);
 }
 
 .dark {
@@ -157,7 +157,7 @@
   }
   h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0; }
   html { scroll-behavior: smooth; }
-  ::selection { background: var(--teal-soft); color: var(--ink); }
+  ::selection { background: var(--soft-blue); color: var(--ink); }
 }
 
 @utility section-shell {
