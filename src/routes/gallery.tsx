@@ -2,9 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { PageHero } from "@/components/ClinicLayout";
-import clinicInterior from "@/assets/clinic-interior.jpg";
-import clinicConsultation from "@/assets/clinic-consultation.jpg";
-import skinConsultation from "@/assets/skin-consultation.jpg";
+import { clinicGallery } from "@/lib/clinic-media";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -21,14 +19,7 @@ export const Route = createFileRoute("/gallery")({
   component: Gallery,
 });
 
-const images = [
-  { src: clinicInterior, alt: "Clinic reception and waiting area", caption: "Reception" },
-  { src: clinicConsultation, alt: "Hair and scalp consultation in progress", caption: "Hair consultation" },
-  { src: skinConsultation, alt: "Skin care plan being discussed with a patient", caption: "Skin consultation" },
-  { src: clinicInterior, alt: "Consultation room at the clinic", caption: "Consultation room" },
-  { src: skinConsultation, alt: "Treatment area of the clinic", caption: "Treatment area" },
-  { src: clinicConsultation, alt: "Patient journey at the clinic", caption: "Patient journey" },
-];
+const images = clinicGallery;
 
 function Gallery() {
   const [active, setActive] = useState<number | null>(null);
@@ -40,7 +31,7 @@ function Gallery() {
   }, []);
   return (
     <>
-      <PageHero eyebrow="Clinic gallery" title="A Calm, Clean Place for Your Care" text="These images show the clinic environment. Photographs of the team, patient results and equipment are added only once approved by the clinic." image={clinicInterior} alt="Sree Cosmetology clinic interior in Rajahmundry" />
+      <PageHero eyebrow="Clinic gallery" title="A Look Inside Sree Cosmetology" text="Explore the clinic branding, services area, reception and waiting environment in Danavaipeta, Rajahmundry." image={images[3].src} alt="Sree Cosmetology clinic reception in Rajahmundry" />
       <section className="py-24">
         <div className="section-shell">
           <div className="columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
@@ -51,7 +42,7 @@ function Gallery() {
               </button>
             ))}
           </div>
-          <p className="mt-8 text-xs text-muted-foreground">Images are illustrative of the clinic environment and are replaced as clinic photographs are supplied.</p>
+          <p className="mt-8 text-xs text-muted-foreground">These photographs were supplied by Sree Cosmetology and show the clinic environment.</p>
         </div>
       </section>
       {current && (
