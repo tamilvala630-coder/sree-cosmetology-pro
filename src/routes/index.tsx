@@ -36,9 +36,9 @@ function Index() {
       <section className="relative overflow-hidden bg-surface pb-12 lg:pb-28">
         <div className="absolute inset-y-0 right-0 hidden w-[54%] bg-soft-blue lg:block" aria-hidden="true" />
         <div className="section-shell relative grid min-h-[650px] items-center gap-8 py-10 lg:grid-cols-[.9fr_1.1fr] lg:py-0">
-          <div className="reveal-up z-10 py-5 lg:py-16">
+          <div className="reveal-up z-10 py-2 lg:py-16">
             <p className="mb-5 text-xs font-bold uppercase tracking-[.3em] text-royal">Hair • Skin • Cosmetology</p>
-            <h1 className="max-w-2xl text-5xl font-semibold leading-[1.04] text-ink sm:text-6xl lg:text-[4.5rem]">
+            <h1 className="max-w-2xl text-4xl font-semibold leading-[1.06] text-ink sm:text-6xl lg:text-[4.5rem]">
               Expert Hair &amp; Skin Care, <span className="text-primary">Personalised for You</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">From hair loss and hair transplantation to advanced skin and cosmetic treatments, get personalised care designed around your concerns, goals and condition.</p>
@@ -46,8 +46,8 @@ function Index() {
               <Button asChild size="lg" variant="premium"><Link to="/contact"><CalendarDays />Book a consultation<ArrowRight /></Link></Button>
               <Button asChild size="lg" variant="outline"><a href={whatsappUrl()}><MessageCircle />WhatsApp us</a></Button>
             </div>
-            <div className="mt-9 grid max-w-2xl gap-4 border-t border-border pt-6 sm:grid-cols-3">
-              {heroTrust.map(([label, Icon]) => <div key={label} className="flex items-center gap-3 text-xs font-semibold leading-5 text-ink"><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-soft-blue text-primary"><Icon className="size-4" /></span>{label}</div>)}
+            <div className="mt-7 grid max-w-2xl grid-cols-3 gap-2 border-t border-border pt-5 sm:mt-9 sm:gap-4 sm:pt-6">
+              {heroTrust.map(([label, Icon]) => <div key={label} className="flex min-w-0 flex-col items-start gap-2 text-[10px] font-semibold leading-4 text-ink sm:flex-row sm:items-center sm:gap-3 sm:text-xs sm:leading-5"><span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-soft-blue text-primary sm:size-9"><Icon className="size-4" /></span><span>{label}</span></div>)}
             </div>
             <p className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary"><MapPin className="size-4"/>Danavaipeta, Rajahmundry</p>
           </div>
