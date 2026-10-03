@@ -1,4 +1,13 @@
-export type HairCondition = {
+import img_male_pattern_hair_loss from "@/assets/concerns/male-pattern-hair-loss.jpg";
+import img_female_pattern_hair_loss from "@/assets/concerns/female-pattern-hair-loss.jpg";
+import img_excessive_hair_fall from "@/assets/concerns/excessive-hair-fall.jpg";
+import img_thinning_hair from "@/assets/concerns/thinning-hair.jpg";
+import img_receding_hairline from "@/assets/concerns/receding-hairline.jpg";
+import img_scalp_conditions from "@/assets/concerns/scalp-conditions.jpg";
+import img_baldness from "@/assets/concerns/baldness.jpg";
+export type Concern = {
+  image: string;
+  imageAlt: string;
   slug: string;
   title: string;
   intro: string;
@@ -17,9 +26,11 @@ const commonAssessment = [
   "A clear explanation of the options that may suit you, along with realistic expectations",
 ];
 
-export const hairConditions: HairCondition[] = [
+export const hairConditions: Concern[] = [
   {
     slug: "male-pattern-hair-loss",
+    image: img_male_pattern_hair_loss,
+    imageAlt: "Adult man with thinning at the temples and crown, typical of male pattern hair loss",
     title: "Male Pattern Hair Loss",
     intro: "Male pattern hair loss is a common, gradual type of thinning that usually affects the hairline and crown. Understanding its stage and progression helps guide sensible next steps.",
     understanding: "Male pattern hair loss (androgenetic alopecia) is commonly linked to genetics and the way hair follicles respond to certain hormones. Over time, affected follicles may produce finer, shorter hair. Its pace and pattern differ from person to person, so an individual assessment matters.",
@@ -34,6 +45,8 @@ export const hairConditions: HairCondition[] = [
   },
   {
     slug: "female-pattern-hair-loss",
+    image: img_female_pattern_hair_loss,
+    imageAlt: "Woman with a widened central parting showing diffuse thinning",
     title: "Female Pattern Hair Loss",
     intro: "Female pattern hair loss usually appears as gradual thinning over the top of the scalp, often with a widening parting, while the front hairline is commonly preserved.",
     understanding: "Female pattern hair loss can be influenced by genetics, hormones and life stages such as pregnancy or menopause. Because several conditions can look similar, a careful assessment helps distinguish it from other causes of hair fall.",
@@ -48,6 +61,8 @@ export const hairConditions: HairCondition[] = [
   },
   {
     slug: "excessive-hair-fall",
+    image: img_excessive_hair_fall,
+    imageAlt: "Hands holding a hairbrush with loose shed hair",
     title: "Excessive Hair Fall",
     intro: "Losing some hair every day is normal. When shedding suddenly increases or continues for weeks, it is worth understanding what may be behind it.",
     understanding: "Increased shedding can follow illness, fever, stress, dietary changes, childbirth or certain medicines. It may be temporary, but it can also overlap with other hair loss conditions, so an assessment helps clarify the picture.",
@@ -62,6 +77,8 @@ export const hairConditions: HairCondition[] = [
   },
   {
     slug: "thinning-hair",
+    image: img_thinning_hair,
+    imageAlt: "Close-up of a scalp parting showing reduced hair density and fine strands",
     title: "Thinning Hair",
     intro: "Thinning hair often develops slowly, with reduced density or finer strands. Identifying the reason is the first step towards choosing a suitable approach.",
     understanding: "Hair can thin for several reasons, including pattern hair loss, ongoing shedding, nutritional factors or scalp conditions. The pattern and pace of thinning give useful clues during assessment.",
@@ -76,6 +93,8 @@ export const hairConditions: HairCondition[] = [
   },
   {
     slug: "receding-hairline",
+    image: img_receding_hairline,
+    imageAlt: "Close-up of a man's front hairline receding at the temples",
     title: "Receding Hairline",
     intro: "A receding hairline is a gradual backward movement of the hairline, often at the temples. Assessing how far and how fast it is changing helps guide options.",
     understanding: "A mature hairline can shift slightly with age, while ongoing recession may be part of pattern hair loss. Understanding the difference helps decide whether monitoring, medical care or restoration may be appropriate.",
@@ -90,6 +109,8 @@ export const hairConditions: HairCondition[] = [
   },
   {
     slug: "scalp-conditions",
+    image: img_scalp_conditions,
+    imageAlt: "Dermatologist examining a patient's scalp with a dermatoscope",
     title: "Scalp Conditions",
     intro: "A healthy scalp supports healthy-looking hair. Itching, flaking, redness or patches can have different causes and benefit from proper assessment.",
     understanding: "Scalp conditions range from dandruff and seborrhoeic dermatitis to inflammation, infections and patchy hair loss. Some may contribute to hair fall, so treating the scalp is often part of overall hair care.",
@@ -100,6 +121,22 @@ export const hairConditions: HairCondition[] = [
     faqs: [
       { q: "Can scalp problems cause hair fall?", a: "Some scalp conditions can contribute to hair fall. Treating the scalp may help, depending on the cause." },
       { q: "Should I stop using hair products?", a: "Not necessarily. Your doctor can advise which products to continue or avoid based on your scalp." },
+    ],
+  },
+  {
+    slug: "baldness",
+    image: img_baldness,
+    imageAlt: "Man seen from behind with a bald crown and advanced hair loss",
+    title: "Baldness",
+    intro: "Baldness usually refers to advanced hair loss, often over the crown or top of the scalp. Understanding its stage and your donor hair helps clarify realistic options.",
+    understanding: "Most baldness in men develops gradually from pattern hair loss. Once follicles in an area have stopped producing hair for a long time, non-surgical options may have limited effect there, so assessment of the stage, stability and donor area is important.",
+    signs: ["A clearly bald crown or top of the scalp", "Hair remaining mainly at the sides and back", "Thinning that has progressed over years", "Fine, sparse hair in the affected area"],
+    causes: ["Advanced pattern hair loss", "Genetic tendency and family history", "Age-related progression", "Less commonly, scarring or other scalp conditions"],
+    assessment: commonAssessment,
+    options: ["Hair transplantation for suitable candidates with an adequate donor area", "Medical management to help protect existing hair, where suitable", "PRP or GFC as supportive therapy, after assessment", "Honest discussion of what may and may not be achievable"],
+    faqs: [
+      { q: "Can hair grow back on a fully bald area?", a: "Long-standing bald areas usually respond poorly to non-surgical treatment. A hair transplant may be considered in suitable candidates." },
+      { q: "Am I a candidate for a hair transplant?", a: "That depends on your donor hair, the extent of baldness and your expectations. A consultation is needed to assess suitability." },
     ],
   },
 ];
