@@ -3,10 +3,10 @@ import { CalendarDays, ChevronRight, HeartPulse, MapPin, Menu, MessageCircle, Ph
 import { useEffect, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { clinic, nav, whatsappUrl } from "@/lib/clinic";
-import clinicLogo from "@/assets/brand/sree-cosmetology-logo.png";
+import clinicLogo from "@/assets/brand/sree-cosmetology-logo-full.png.asset.json";
 
 export function Brand({ inverse = false }: { inverse?: boolean }) {
-  return <Link to="/" className="inline-flex items-center py-1" aria-label="Sree Cosmetology home"><img src={clinicLogo} alt="Sree Cosmetology Hair and Skin Clinic" width={322} height={59} className={`h-auto w-[190px] object-contain sm:w-[220px] ${inverse ? "brightness-0 invert" : ""}`} /></Link>;
+  return <Link to="/" className="inline-flex items-center py-1" aria-label="Sree Cosmetology home"><img src={clinicLogo.url} alt="Sree Cosmetology Hair and Skin Clinic" width={245} height={70} className={`h-auto w-[190px] object-contain sm:w-[220px] ${inverse ? "brightness-0 invert" : ""}`} /></Link>;
 }
 
 export function Header() {
