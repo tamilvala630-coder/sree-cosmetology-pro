@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarDays, Check, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles, Stethoscope } from "lucide-react";
+import { Activity, ArrowRight, CalendarDays, Check, Flower2, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles, Stethoscope, Syringe, UserRound } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { BookingForm } from "@/components/BookingForm";
@@ -29,40 +29,45 @@ export const Route = createFileRoute("/")({
 function Index() {
   const concerns = ["Hair Fall","Hair Thinning","Baldness","Hairline Concerns","Acne & Acne Scars","Pigmentation","Skin Texture","Other Skin Concerns"];
   const concernSlugs = ["excessive-hair-fall","thinning-hair","baldness","receding-hairline","acne-and-acne-scars","pigmentation","skin-texture","other-skin-concerns"];
-  const trust = [["Hair Restoration","Personalised solutions for hair loss and thinning"],["Skin Care","Advanced care for common and cosmetic concerns"],["Personalised Consultation","Recommendations based on individual needs"],["Patient-Centred Care","Comfort, hygiene and clear communication"]];
-  const heroTrust = [["Personalised Consultation", Stethoscope],["Professional Care", ShieldCheck],["Modern Treatments", Sparkles]] as const;
+  const heroTrust = [["Personalised Consultation", UserRound],["Evidence-Based Treatments", ShieldCheck],["Caring & Professional Support", Stethoscope]] as const;
+  const heroServices = [
+    ["Hair Transplant", "Individual planning for natural-looking restoration", Activity, "/hair-transplant"],
+    ["PRP / GFC", "Consultation-led regenerative hair care", Syringe, "/treatments"],
+    ["Hair Loss Treatment", "Understand the cause before treatment", Stethoscope, "/hair"],
+    ["Skin Treatments", "Care for clearer, healthier-looking skin", UserRound, "/skin"],
+    ["Cosmetic Treatments", "Personalised options for your goals", Flower2, "/treatments"],
+  ] as const;
   const loss = ["Male Pattern Hair Loss","Female Pattern Hair Loss","Excessive Hair Fall","Thinning Hair","Receding Hairline","Scalp Conditions","Dandruff / Scalp Issues","Alopecia"];
   return (
     <>
-      <section className="relative overflow-hidden bg-surface pb-12 lg:pb-28">
-        <div className="absolute inset-y-0 right-0 hidden w-[54%] bg-soft-blue lg:block" aria-hidden="true" />
-        <div className="section-shell relative grid min-h-[650px] items-center gap-8 py-10 lg:grid-cols-[.9fr_1.1fr] lg:py-0">
-          <div className="reveal-up z-10 py-2 lg:py-16">
+      <section className="relative overflow-hidden bg-surface pb-12 lg:pb-20">
+        <div className="hero-sweep absolute inset-0 bg-soft-blue" aria-hidden="true" />
+        <div className="section-shell relative grid min-h-[620px] items-center lg:grid-cols-[.88fr_1.12fr]">
+          <div className="reveal-up relative z-10 py-12 lg:py-16 lg:pr-10">
             <p className="mb-5 text-xs font-bold uppercase tracking-[.3em] text-royal">Hair • Skin • Cosmetology</p>
-            <h1 className="max-w-2xl text-4xl font-semibold leading-[1.06] text-ink sm:text-6xl lg:text-[4.5rem]">
-              Expert Hair &amp; Skin Care, <span className="text-primary">Personalised for You</span>
+            <h1 className="max-w-2xl text-4xl font-semibold leading-[1.04] text-ink sm:text-6xl lg:text-[4.25rem]">
+              Expert Care for <span className="text-primary">Healthier Hair</span> and <span className="text-primary">Radiant Skin</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">From hair loss and hair transplantation to advanced skin and cosmetic treatments, get personalised care designed around your concerns, goals and condition.</p>
+            <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">From hair loss and hair transplantation to advanced skin and cosmetic treatments, we provide personalised care designed around your concerns, goals and condition.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" variant="premium"><Link to="/contact"><CalendarDays />Book a consultation<ArrowRight /></Link></Button>
-              <Button asChild size="lg" variant="outline"><a href={whatsappUrl()}><MessageCircle />WhatsApp us</a></Button>
+              <Button asChild size="lg" variant="outline"><a href={whatsappUrl()} target="_blank" rel="noreferrer"><MessageCircle />Chat on WhatsApp</a></Button>
             </div>
-            <div className="mt-7 grid max-w-2xl grid-cols-3 gap-2 border-t border-border pt-5 sm:mt-9 sm:gap-4 sm:pt-6">
-              {heroTrust.map(([label, Icon]) => <div key={label} className="flex min-w-0 flex-col items-start gap-2 text-[10px] font-semibold leading-4 text-ink sm:flex-row sm:items-center sm:gap-3 sm:text-xs sm:leading-5"><span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-soft-blue text-primary sm:size-9"><Icon className="size-4" /></span><span>{label}</span></div>)}
+            <div className="mt-9 grid max-w-2xl gap-4 border-t border-border pt-6 sm:grid-cols-3">
+              {heroTrust.map(([label, Icon]) => <div key={label} className="flex min-w-0 items-center gap-3 text-xs font-semibold leading-5 text-ink"><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-background text-primary shadow-soft"><Icon className="size-4" /></span><span>{label}</span></div>)}
             </div>
-            <p className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary"><MapPin className="size-4"/>Danavaipeta, Rajahmundry</p>
           </div>
-          <div className="relative self-stretch lg:-mr-[calc((100vw-min(100vw-2rem,76rem))/2)]">
-            <div className="absolute inset-0 bg-soft-blue" aria-hidden="true" />
-            <img src={heroImage} alt="Hair and scalp consultation at a modern medical clinic" width={1600} height={1072} fetchPriority="high" className="hero-photo-mask relative h-full min-h-[430px] w-full object-cover object-center lg:min-h-[650px]" />
-            <div className="absolute bottom-5 left-5 max-w-[17rem] rounded-md border border-border bg-background/95 p-4 shadow-lift backdrop-blur sm:left-8 lg:bottom-28 lg:left-4">
+          <div className="relative h-full min-h-[460px] self-stretch lg:-mr-[calc((100vw-min(100vw-2rem,76rem))/2)] lg:min-h-[620px]">
+            <img src={heroImage} alt="Hair and scalp consultation at a modern medical clinic" width={1600} height={1072} fetchPriority="high" className="relative h-full w-full object-cover object-center" />
+            <div className="absolute bottom-6 left-5 max-w-[17rem] rounded-md border border-border bg-background/95 p-4 shadow-lift backdrop-blur sm:left-8 lg:bottom-24 lg:left-5">
               <div className="flex items-center gap-3"><ShieldCheck className="size-7 shrink-0 text-primary"/><div><strong className="block text-sm text-ink">Professional, considered care</strong><span className="text-xs text-muted-foreground">Ratings shown after verification</span></div></div>
             </div>
           </div>
         </div>
-        <div className="section-shell relative z-20 mt-7 lg:-mt-20">
-          <div className="grid overflow-hidden rounded-lg border border-border bg-background shadow-lift sm:grid-cols-2 lg:grid-cols-4">
-            {trust.map(([title,text],i)=><article key={title} className={`group min-h-48 p-6 transition-colors hover:bg-soft-blue ${i<3?"lg:border-r lg:border-border":""} ${i<2?"border-b border-border lg:border-b-0":""}`}><span className="flex size-10 items-center justify-center rounded-full bg-soft-blue text-sm font-bold text-primary transition-colors group-hover:bg-background">0{i+1}</span><h2 className="mt-5 text-lg font-semibold text-ink">{title}</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p><ArrowRight className="mt-4 size-4 text-primary transition-transform group-hover:translate-x-1" /></article>)}
+        <div className="section-shell relative z-20 -mt-1 lg:-mt-14">
+          <div className="grid overflow-hidden rounded-lg border border-border bg-background shadow-lift sm:grid-cols-2 lg:grid-cols-[repeat(5,minmax(0,1fr))_.85fr]">
+            {heroServices.map(([title,text,Icon,to])=><Link key={title} to={to} className="group min-h-44 border-b border-border p-5 transition-colors hover:bg-soft-blue sm:odd:border-r lg:border-b-0 lg:border-r"><Icon className="size-8 text-primary"/><h2 className="mt-5 text-base font-semibold text-ink">{title}</h2><p className="mt-2 text-xs leading-5 text-muted-foreground">{text}</p><ArrowRight className="mt-3 size-4 text-primary transition-transform group-hover:translate-x-1"/></Link>)}
+            <div className="hidden flex-col justify-center p-6 lg:flex"><p className="font-display text-xl leading-7 text-ink">Trusted care.<br/>Real confidence.</p><span className="mt-5 h-px w-8 bg-primary"/><p className="mt-5 text-[10px] font-bold uppercase leading-5 tracking-[.2em] text-muted-foreground">Sree Cosmetology<br/>Hair and Skin Clinic</p></div>
           </div>
         </div>
       </section>

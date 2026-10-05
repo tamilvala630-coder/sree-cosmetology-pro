@@ -1,19 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import { CalendarDays, ChevronRight, HeartPulse, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { CalendarDays, ChevronRight, HeartPulse, MapPin, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { clinic, nav, whatsappUrl } from "@/lib/clinic";
 import clinicLogo from "@/assets/brand/sree-cosmetology-logo.png";
 
 export function Brand({ inverse = false }: { inverse?: boolean }) {
-  return <Link to="/" className="inline-flex items-center" aria-label="Sree Cosmetology home"><img src={clinicLogo} alt="Sree Cosmetology Hair and Skin Clinic" width={265} height={67} className={`h-11 w-auto object-contain sm:h-12 ${inverse ? "brightness-0 invert" : ""}`} /></Link>;
+  return <Link to="/" className="inline-flex items-center py-1" aria-label="Sree Cosmetology home"><img src={clinicLogo} alt="Sree Cosmetology Hair and Skin Clinic" width={322} height={59} className={`h-auto w-[190px] object-contain sm:w-[220px] ${inverse ? "brightness-0 invert" : ""}`} /></Link>;
 }
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 24); onScroll(); addEventListener("scroll", onScroll); return () => removeEventListener("scroll", onScroll); }, []);
-  return <header className={`sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur-xl transition-all ${scrolled ? "py-2 shadow-soft" : "py-4"}`}><div className="section-shell flex items-center justify-between gap-5"><Brand /><nav className="hidden items-center gap-5 xl:flex" aria-label="Main navigation">{nav.map(([label,to]) => <Link key={to} to={to} className="text-xs font-semibold text-muted-foreground transition-colors hover:text-primary" activeProps={{className:"text-primary"}}>{label}</Link>)}</nav><Button asChild variant="premium" className="hidden lg:inline-flex"><Link to="/contact"><CalendarDays />Book consultation</Link></Button><Button variant="ghost" size="icon" className="xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open ? <X /> : <Menu />}</Button></div>{open && <nav className="section-shell grid gap-1 py-4 xl:hidden">{nav.map(([label,to]) => <Link key={to} to={to} onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-sm font-semibold hover:bg-muted">{label}</Link>)}</nav>}</header>;
+  return <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-xl"><div className="hidden bg-primary text-primary-foreground md:block"><div className="section-shell flex h-8 items-center justify-between text-[11px]"><span className="flex items-center gap-2"><MapPin className="size-3.5"/>Danavaipeta, Rajahmundry</span><div className="flex items-center gap-5"><Link to="/contact" className="hover:underline">Book Consultation</Link><a href={whatsappUrl()} target="_blank" rel="noreferrer" className="hover:underline">WhatsApp Us</a><a href={`tel:${clinic.phone}`} className="flex items-center gap-2 font-semibold"><Phone className="size-3.5"/>{clinic.phoneDisplay}</a></div></div></div><div className={`border-b border-border/70 transition-all ${scrolled ? "py-1 shadow-soft" : "py-2"}`}><div className="section-shell flex min-h-14 items-center justify-between gap-5"><Brand /><nav className="hidden items-center gap-5 xl:flex" aria-label="Main navigation">{nav.map(([label,to]) => <Link key={to} to={to} className="text-xs font-semibold text-muted-foreground transition-colors hover:text-primary" activeProps={{className:"text-primary"}}>{label}</Link>)}</nav><Button asChild variant="premium" className="hidden lg:inline-flex"><Link to="/contact"><CalendarDays />Book consultation</Link></Button><Button variant="ghost" size="icon" className="xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open ? <X /> : <Menu />}</Button></div>{open && <nav className="section-shell grid gap-1 py-4 xl:hidden">{nav.map(([label,to]) => <Link key={to} to={to} onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-sm font-semibold hover:bg-muted">{label}</Link>)}</nav>}</div></header>;
 }
 
 export function Footer() {
