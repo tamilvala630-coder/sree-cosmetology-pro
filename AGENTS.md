@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Hair-transplant options use one shared data module and one dynamic detail route so card links, imagery, and medical copy stay consistent across the site.
