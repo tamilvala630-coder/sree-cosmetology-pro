@@ -15,14 +15,6 @@ export const clinic = {
   reviews: [] as Array<{ name: string; text: string; rating: number }>,
 };
 
-export const hairTreatments = [
-  { title: "FUE Hair Transplant", text: "Individual follicular units are moved from a suitable donor area to planned recipient areas after careful assessment." },
-  { title: "Hairline Restoration", text: "Hairline planning considers facial proportions, existing loss and long-term expectations for an age-appropriate appearance." },
-  { title: "Crown Restoration", text: "Selected crown-area concerns can be assessed for graft placement, coverage priorities and donor availability." },
-  { title: "Beard & Moustache Transplant", text: "A consultation-led option for selected facial hair concerns, planned around growth direction and available donor hair." },
-  { title: "Corrective Hair Transplant", text: "Previous procedures can be assessed individually to understand whether corrective planning may be appropriate." },
-];
-
 export const skinTreatments = [
   { title: "Acne Treatment", text: "A personalised approach based on acne type, triggers, skin history and current condition." },
   { title: "Acne Scar Treatment", text: "Assessment of scar type and depth helps guide suitable treatment options." },
