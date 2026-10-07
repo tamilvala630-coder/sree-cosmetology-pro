@@ -16,15 +16,15 @@ export const clinic = {
 };
 
 export const skinTreatments = [
-  { title: "Acne Treatment", text: "A personalised approach based on acne type, triggers, skin history and current condition." },
-  { title: "Acne Scar Treatment", text: "Assessment of scar type and depth helps guide suitable treatment options." },
-  { title: "Pigmentation Treatment", text: "Careful assessment can help identify the pattern and possible causes before planning care." },
-  { title: "Chemical Peels", text: "Clinically selected exfoliation options may support specific texture and tone concerns." },
-  { title: "Skin Rejuvenation", text: "Consultation-led care focused on skin quality, hydration and individual goals." },
-  { title: "Hydra / Hydration Treatments", text: "Hydration-focused treatments selected according to current skin needs." },
-  { title: "Uneven Skin Tone", text: "A considered plan for visible unevenness after evaluation of your skin." },
-  { title: "Skin Texture", text: "Options are discussed according to the nature and extent of texture concerns." },
-  { title: "Anti-Ageing / Cosmetic Skin Care", text: "Personalised cosmetic care with clear discussion of suitability and expectations." },
+  { slug: "acne-treatment", section: "skin-treatment" as const, title: "Acne Treatment", text: "A personalised approach based on acne type, triggers, skin history and current condition." },
+  { slug: "acne-scar-treatment", section: "skin-treatment" as const, title: "Acne Scar Treatment", text: "Assessment of scar type and depth helps guide suitable treatment options." },
+  { slug: "pigmentation-treatment", section: "skin-treatment" as const, title: "Pigmentation Treatment", text: "Careful assessment can help identify the pattern and possible causes before planning care." },
+  { slug: "chemical-peels", section: "skin-treatment" as const, title: "Chemical Peels", text: "Clinically selected exfoliation options may support specific texture and tone concerns." },
+  { slug: "skin-rejuvenation", section: "skin-treatment" as const, title: "Skin Rejuvenation", text: "Consultation-led care focused on skin quality, hydration and individual goals." },
+  { slug: "hydra-hydration-treatments", section: "skin-treatment" as const, title: "Hydra / Hydration Treatments", text: "Hydration-focused treatments selected according to current skin needs." },
+  { slug: "uneven-skin-tone", section: "skin-treatment" as const, title: "Uneven Skin Tone", text: "A considered plan for visible unevenness after evaluation of your skin." },
+  { slug: "skin-texture", section: "skin-treatment" as const, title: "Skin Texture", text: "Options are discussed according to the nature and extent of texture concerns." },
+  { slug: "anti-ageing-cosmetic-skin-care", section: "skin-treatment" as const, title: "Anti-Ageing / Cosmetic Skin Care", text: "Personalised cosmetic care with clear discussion of suitability and expectations." },
 ];
 
 export const faqItems = [
