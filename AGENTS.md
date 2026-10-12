@@ -11,3 +11,4 @@
 
 - Hair-transplant options use one shared data module and one dynamic detail route so card links, imagery, and medical copy stay consistent across the site.
 - Non-surgical hair treatments use one shared data module and one dynamic detail route so home cards, related imagery, and medical copy stay consistent.
+- Skin treatments use one shared data module and one dynamic detail route so treatment cards, matching imagery, and medical copy stay consistent.
