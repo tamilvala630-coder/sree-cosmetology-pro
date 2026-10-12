@@ -25,6 +25,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
 import { Route as HairTransplantSlugRouteImport } from './routes/hair-transplant_.$slug'
 import { Route as HairSlugRouteImport } from './routes/hair_.$slug'
+import { Route as SkinTreatmentsSlugRouteImport } from './routes/skin-treatments.$slug'
 import { Route as SkinSlugRouteImport } from './routes/skin_.$slug'
 import { Route as TreatmentsSlugRouteImport } from './routes/treatments_.$slug'
 
@@ -108,6 +109,11 @@ const HairSlugRoute = HairSlugRouteImport.update({
   path: '/hair/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SkinTreatmentsSlugRoute = SkinTreatmentsSlugRouteImport.update({
+  id: '/skin-treatments/$slug',
+  path: '/skin-treatments/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SkinSlugRoute = SkinSlugRouteImport.update({
   id: '/skin_/$slug',
   path: '/skin/$slug',
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/treatments': typeof TreatmentsRoute
   '/hair-transplant/$slug': typeof HairTransplantSlugRoute
   '/hair/$slug': typeof HairSlugRoute
+  '/skin-treatments/$slug': typeof SkinTreatmentsSlugRoute
   '/skin/$slug': typeof SkinSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
 }
@@ -156,6 +163,7 @@ export interface FileRoutesByTo {
   '/treatments': typeof TreatmentsRoute
   '/hair-transplant/$slug': typeof HairTransplantSlugRoute
   '/hair/$slug': typeof HairSlugRoute
+  '/skin-treatments/$slug': typeof SkinTreatmentsSlugRoute
   '/skin/$slug': typeof SkinSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
 }
@@ -177,6 +185,7 @@ export interface FileRoutesById {
   '/treatments': typeof TreatmentsRoute
   '/hair-transplant_/$slug': typeof HairTransplantSlugRoute
   '/hair_/$slug': typeof HairSlugRoute
+  '/skin-treatments/$slug': typeof SkinTreatmentsSlugRoute
   '/skin_/$slug': typeof SkinSlugRoute
   '/treatments_/$slug': typeof TreatmentsSlugRoute
 }
@@ -199,6 +208,7 @@ export interface FileRouteTypes {
     | '/treatments'
     | '/hair-transplant/$slug'
     | '/hair/$slug'
+    | '/skin-treatments/$slug'
     | '/skin/$slug'
     | '/treatments/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -219,6 +229,7 @@ export interface FileRouteTypes {
     | '/treatments'
     | '/hair-transplant/$slug'
     | '/hair/$slug'
+    | '/skin-treatments/$slug'
     | '/skin/$slug'
     | '/treatments/$slug'
   id:
@@ -239,6 +250,7 @@ export interface FileRouteTypes {
     | '/treatments'
     | '/hair-transplant_/$slug'
     | '/hair_/$slug'
+    | '/skin-treatments/$slug'
     | '/skin_/$slug'
     | '/treatments_/$slug'
   fileRoutesById: FileRoutesById
@@ -260,6 +272,7 @@ export interface RootRouteChildren {
   TreatmentsRoute: typeof TreatmentsRoute
   HairTransplantSlugRoute: typeof HairTransplantSlugRoute
   HairSlugRoute: typeof HairSlugRoute
+  SkinTreatmentsSlugRoute: typeof SkinTreatmentsSlugRoute
   SkinSlugRoute: typeof SkinSlugRoute
   TreatmentsSlugRoute: typeof TreatmentsSlugRoute
 }
@@ -378,6 +391,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HairSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/skin-treatments/$slug': {
+      id: '/skin-treatments/$slug'
+      path: '/skin-treatments/$slug'
+      fullPath: '/skin-treatments/$slug'
+      preLoaderRoute: typeof SkinTreatmentsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/skin_/$slug': {
       id: '/skin_/$slug'
       path: '/skin/$slug'
@@ -412,6 +432,7 @@ const rootRouteChildren: RootRouteChildren = {
   TreatmentsRoute: TreatmentsRoute,
   HairTransplantSlugRoute: HairTransplantSlugRoute,
   HairSlugRoute: HairSlugRoute,
+  SkinTreatmentsSlugRoute: SkinTreatmentsSlugRoute,
   SkinSlugRoute: SkinSlugRoute,
   TreatmentsSlugRoute: TreatmentsSlugRoute,
 }
