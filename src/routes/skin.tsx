@@ -1,5 +1,6 @@
+import pageImage from "@/assets/treatments/skin-rejuvenation.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import { ContentPage } from "@/components/ContentPage";
 import { skinTreatments } from "@/lib/clinic";
 export const Route=createFileRoute("/skin")({head:()=>({meta:[{title:"Skin Clinic in Rajahmundry | Sree Cosmetology"},{name:"description",content:"Personalised acne, acne scar, pigmentation, texture and cosmetic skin consultations in Rajahmundry."},{property:"og:title",content:"Skin Care in Rajahmundry | Sree Cosmetology"},{property:"og:description",content:"A considered approach to common and cosmetic skin concerns."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/skin"}]}),component:Page});
-function Page(){return <ContentPage eyebrow="Skin & cosmetology" title="Healthy-Looking Skin Starts With the Right Approach" intro="Skin concerns differ from person to person. Your history, skin type and goals all help shape a suitable care plan." items={skinTreatments}/>}
+function Page(){return <ContentPage image={pageImage} imageAlt="Skin rejuvenation care illustration" eyebrow="Skin & cosmetology" title="Healthy-Looking Skin Starts With the Right Approach" intro="Skin concerns differ from person to person. Your history, skin type and goals all help shape a suitable care plan." items={skinTreatments}/>}
